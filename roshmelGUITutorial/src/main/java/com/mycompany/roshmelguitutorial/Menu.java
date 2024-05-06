@@ -39,12 +39,12 @@ public class Menu extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Welcome to the Employee System");
 
-        jLabel1.setIcon(new javax.swing.ImageIcon("/Users/roshmelcreer/NetBeansProjects/roshmelGUITutorial/src/main/java/resources/men.png")); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/men.png"))); // NOI18N
 
-        jMenu1.setIcon(new javax.swing.ImageIcon("/Users/roshmelcreer/NetBeansProjects/roshmelGUITutorial/src/main/java/resources/folder.png")); // NOI18N
+        jMenu1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/folder.png"))); // NOI18N
         jMenu1.setText("File");
 
-        jMenuItem1.setIcon(new javax.swing.ImageIcon("/Users/roshmelcreer/NetBeansProjects/roshmelGUITutorial/src/main/java/resources/exit.png")); // NOI18N
+        jMenuItem1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/exit.png"))); // NOI18N
         jMenuItem1.setText("Exit");
         jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -55,10 +55,10 @@ public class Menu extends javax.swing.JFrame {
 
         jMenuBar1.add(jMenu1);
 
-        jMenu2.setIcon(new javax.swing.ImageIcon("/Users/roshmelcreer/NetBeansProjects/roshmelGUITutorial/src/main/java/resources/add.png")); // NOI18N
+        jMenu2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/add.png"))); // NOI18N
         jMenu2.setText("Add");
 
-        jMenuItem2.setIcon(new javax.swing.ImageIcon("/Users/roshmelcreer/NetBeansProjects/roshmelGUITutorial/src/main/java/resources/addemployee.png")); // NOI18N
+        jMenuItem2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/addemployee.png"))); // NOI18N
         jMenuItem2.setText("Add New Employee");
         jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -67,7 +67,7 @@ public class Menu extends javax.swing.JFrame {
         });
         jMenu2.add(jMenuItem2);
 
-        jMenuItem3.setIcon(new javax.swing.ImageIcon("/Users/roshmelcreer/NetBeansProjects/roshmelGUITutorial/src/main/java/resources/job.png")); // NOI18N
+        jMenuItem3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/job.png"))); // NOI18N
         jMenuItem3.setText("Add New Job");
         jMenuItem3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -78,10 +78,10 @@ public class Menu extends javax.swing.JFrame {
 
         jMenuBar1.add(jMenu2);
 
-        jMenu3.setIcon(new javax.swing.ImageIcon("/Users/roshmelcreer/NetBeansProjects/roshmelGUITutorial/src/main/java/resources/edit.png")); // NOI18N
+        jMenu3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/edit.png"))); // NOI18N
         jMenu3.setText("Edit");
 
-        jMenuItem4.setIcon(new javax.swing.ImageIcon("/Users/roshmelcreer/NetBeansProjects/roshmelGUITutorial/src/main/java/resources/edit.png")); // NOI18N
+        jMenuItem4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/edit.png"))); // NOI18N
         jMenuItem4.setText("Edit Employee");
         jMenuItem4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -106,7 +106,7 @@ public class Menu extends javax.swing.JFrame {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(22, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 343, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18))
         );

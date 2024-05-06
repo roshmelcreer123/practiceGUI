@@ -49,7 +49,7 @@ public class AddNewJob extends javax.swing.JFrame {
 
         jLabel3.setText("Salary for this Job:");
 
-        jButton1.setIcon(new javax.swing.ImageIcon("/Users/roshmelcreer/NetBeansProjects/roshmelGUITutorial/src/main/java/resources/save.png")); // NOI18N
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/save.png"))); // NOI18N
         jButton1.setText("Save");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());

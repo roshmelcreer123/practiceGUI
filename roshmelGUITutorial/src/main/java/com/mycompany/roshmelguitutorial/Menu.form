@@ -7,7 +7,7 @@
         <Menu class="javax.swing.JMenu" name="jMenu1">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="/Users/roshmelcreer/NetBeansProjects/roshmelGUITutorial/src/main/java/resources/folder.png"/>
+              <Image iconType="3" name="/images/folder.png"/>
             </Property>
             <Property name="text" type="java.lang.String" value="File"/>
           </Properties>
@@ -15,7 +15,7 @@
             <MenuItem class="javax.swing.JMenuItem" name="jMenuItem1">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="/Users/roshmelcreer/NetBeansProjects/roshmelGUITutorial/src/main/java/resources/exit.png"/>
+                  <Image iconType="3" name="/images/exit.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Exit"/>
               </Properties>
@@ -28,7 +28,7 @@
         <Menu class="javax.swing.JMenu" name="jMenu2">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="/Users/roshmelcreer/NetBeansProjects/roshmelGUITutorial/src/main/java/resources/add.png"/>
+              <Image iconType="3" name="/images/add.png"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Add"/>
           </Properties>
@@ -36,7 +36,7 @@
             <MenuItem class="javax.swing.JMenuItem" name="jMenuItem2">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="/Users/roshmelcreer/NetBeansProjects/roshmelGUITutorial/src/main/java/resources/addemployee.png"/>
+                  <Image iconType="3" name="/images/addemployee.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Add New Employee"/>
               </Properties>
@@ -47,7 +47,7 @@
             <MenuItem class="javax.swing.JMenuItem" name="jMenuItem3">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="/Users/roshmelcreer/NetBeansProjects/roshmelGUITutorial/src/main/java/resources/job.png"/>
+                  <Image iconType="3" name="/images/job.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Add New Job"/>
               </Properties>
@@ -60,7 +60,7 @@
         <Menu class="javax.swing.JMenu" name="jMenu3">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="/Users/roshmelcreer/NetBeansProjects/roshmelGUITutorial/src/main/java/resources/edit.png"/>
+              <Image iconType="3" name="/images/edit.png"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Edit"/>
           </Properties>
@@ -68,7 +68,7 @@
             <MenuItem class="javax.swing.JMenuItem" name="jMenuItem4">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="/Users/roshmelcreer/NetBeansProjects/roshmelGUITutorial/src/main/java/resources/edit.png"/>
+                  <Image iconType="3" name="/images/edit.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Edit Employee"/>
               </Properties>
@@ -115,7 +115,7 @@
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="1" attributes="0">
-              <EmptySpace pref="22" max="32767" attributes="0"/>
+              <EmptySpace max="32767" attributes="0"/>
               <Component id="jLabel1" min="-2" pref="343" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
           </Group>
@@ -126,7 +126,7 @@
     <Component class="javax.swing.JLabel" name="jLabel1">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="2" name="/Users/roshmelcreer/NetBeansProjects/roshmelGUITutorial/src/main/java/resources/men.png"/>
+          <Image iconType="3" name="/images/men.png"/>
         </Property>
       </Properties>
     </Component>

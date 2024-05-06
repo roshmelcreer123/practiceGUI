@@ -60,10 +60,10 @@ public class EditEmployee extends javax.swing.JFrame {
 
         jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
-        jButton1.setIcon(new javax.swing.ImageIcon("/Users/roshmelcreer/NetBeansProjects/roshmelGUITutorial/src/main/java/resources/save.png")); // NOI18N
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/save.png"))); // NOI18N
         jButton1.setText("Save");
 
-        jButton2.setIcon(new javax.swing.ImageIcon("/Users/roshmelcreer/NetBeansProjects/roshmelGUITutorial/src/main/java/resources/exit.png")); // NOI18N
+        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/exit.png"))); // NOI18N
         jButton2.setText("Delete");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

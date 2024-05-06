@@ -170,7 +170,7 @@
     <Component class="javax.swing.JButton" name="jButton1">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="2" name="/Users/roshmelcreer/NetBeansProjects/roshmelGUITutorial/src/main/java/resources/save.png"/>
+          <Image iconType="3" name="/images/save.png"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Save"/>
       </Properties>
@@ -178,7 +178,7 @@
     <Component class="javax.swing.JButton" name="jButton2">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="2" name="/Users/roshmelcreer/NetBeansProjects/roshmelGUITutorial/src/main/java/resources/exit.png"/>
+          <Image iconType="3" name="/images/exit.png"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Delete"/>
       </Properties>
