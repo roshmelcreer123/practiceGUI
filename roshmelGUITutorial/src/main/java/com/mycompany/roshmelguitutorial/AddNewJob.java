@@ -4,19 +4,80 @@
  */
 package com.mycompany.roshmelguitutorial;
 
+import javax.swing.*;
+import java.util.*;
+import java.io.*;
+
 /**
  *
  * @author roshmelcreer
  */
 public class AddNewJob extends javax.swing.JFrame {
 
+    ArrayList<Job> jobs;
+    
     /**
      * Creates new form AddNewJob
      */
     public AddNewJob() {
         initComponents();
+        jobs = new ArrayList<Job>();
+        populateArrayList();
     }
-
+    
+    public void populateArrayList(){
+    
+        try{
+            FileInputStream file = new FileInputStream("Jobs.dat");
+            ObjectInputStream inputFile = new ObjectInputStream(file);
+            
+            boolean endOfFile = false;
+            
+            while(!endOfFile){
+            
+                try{
+                    jobs.add((Job)inputFile.readObject());
+                }
+                catch(EOFException e){
+                    endOfFile = true;
+                }
+                catch(Exception f){
+                    JOptionPane.showMessageDialog(null, f.getMessage());
+                }
+                
+            }
+            
+            inputFile.close();
+        }
+        catch(IOException e){
+            JOptionPane.showMessageDialog(null, e.getMessage());
+        }
+    }
+    
+    public void saveJobsToFile(){
+        
+        try{
+            FileOutputStream file = new FileOutputStream("Jobs.dat");
+            ObjectOutputStream outputFile = new ObjectOutputStream(file);
+            
+            for(int i = 0; i < jobs.size(); i++){
+                
+                outputFile.writeObject(jobs.get(i));
+            }
+            
+            outputFile.close();
+            
+            JOptionPane.showMessageDialog(null, "Successfully saved!");
+            this.dispose();
+            
+        }
+        catch(IOException e){
+            JOptionPane.showMessageDialog(null, e.getMessage());
+        }
+        
+    }
+    
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -26,78 +87,106 @@ public class AddNewJob extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jLabel3 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
+        createJob = new javax.swing.JLabel();
+        nameJobLabel = new javax.swing.JLabel();
+        jobName = new javax.swing.JTextField();
+        salaryJobLabel = new javax.swing.JLabel();
+        salaryJob = new javax.swing.JTextField();
+        saveButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Create New Job");
 
-        jLabel1.setFont(new java.awt.Font("Helvetica Neue", 1, 18)); // NOI18N
-        jLabel1.setText("Create a new job by entering the data below");
+        createJob.setFont(new java.awt.Font("Helvetica Neue", 1, 18)); // NOI18N
+        createJob.setText("Create a new job by entering the data below");
 
-        jLabel2.setText("Name of the Job:");
+        nameJobLabel.setText("Name of the Job:");
 
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+        jobName.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
+                jobNameActionPerformed(evt);
             }
         });
 
-        jLabel3.setText("Salary for this Job:");
+        salaryJobLabel.setText("Salary for this Job:");
 
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/save.png"))); // NOI18N
-        jButton1.setText("Save");
+        saveButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/save.png"))); // NOI18N
+        saveButton.setText("Save");
+        saveButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                saveButtonActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(12, 12, 12)
+                .addGap(68, 68, 68)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(salaryJobLabel)
+                    .addComponent(nameJobLabel))
+                .addGap(34, 34, 34)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel1)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel3)
-                            .addComponent(jLabel2))
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jTextField1, javax.swing.GroupLayout.DEFAULT_SIZE, 242, Short.MAX_VALUE)
-                            .addComponent(jTextField2))))
-                .addContainerGap(20, Short.MAX_VALUE))
+                    .addComponent(salaryJob, javax.swing.GroupLayout.PREFERRED_SIZE, 242, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jobName, javax.swing.GroupLayout.PREFERRED_SIZE, 242, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(68, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton1)
-                .addGap(124, 124, 124))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(createJob)
+                        .addGap(55, 55, 55))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(saveButton)
+                        .addGap(138, 138, 138))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(20, 20, 20)
+                .addComponent(createJob)
+                .addGap(29, 29, 29)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel3)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jobName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(nameJobLabel))
                 .addGap(18, 18, 18)
-                .addComponent(jButton1)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(salaryJobLabel)
+                    .addComponent(salaryJob, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addComponent(saveButton)
+                .addContainerGap(13, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+    private void jobNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jobNameActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
+    }//GEN-LAST:event_jobNameActionPerformed
+
+    private void saveButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveButtonActionPerformed
+        
+        if(jobName.getText().isEmpty() || salaryJob.getText().isEmpty()){
+        
+            JOptionPane.showMessageDialog(null, "Please enter all fields");
+        }
+        
+        else{
+            String name = jobName.getText().trim();
+            String salary = salaryJob.getText().trim();
+            
+            Job job = new Job(Double.parseDouble(salary), name);
+            
+            jobs.add(job);
+            
+            saveJobsToFile();
+            
+        }
+        
+    }//GEN-LAST:event_saveButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -135,11 +224,11 @@ public class AddNewJob extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
+    private javax.swing.JLabel createJob;
+    private javax.swing.JTextField jobName;
+    private javax.swing.JLabel nameJobLabel;
+    private javax.swing.JTextField salaryJob;
+    private javax.swing.JLabel salaryJobLabel;
+    private javax.swing.JButton saveButton;
     // End of variables declaration//GEN-END:variables
 }
